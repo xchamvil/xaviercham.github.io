@@ -244,6 +244,11 @@ hr.small {
   pointer-events: none;
 }
 
+/* Contact */
+.mail{
+  padding-top: 50px;
+}
+
 
 /* Footer */
 
