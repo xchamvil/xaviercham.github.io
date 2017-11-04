@@ -2,11 +2,11 @@
 <html lang="en">
 
   <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="referrer" content="origin">
 
     <title>Stylish Portfolio - Start Bootstrap Template</title>
 
@@ -19,7 +19,7 @@
 
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.css" rel="stylesheet">
-
+    <link href="css/style.css" rel="stylesheet">
   </head>
 
   <body>
@@ -152,49 +152,37 @@
 
     <!-- Portfolio -->
     <section id="portfolio" class="portfolio">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-10 mx-auto text-center">
-            <h2>Our Work</h2>
-            <hr class="small">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="portfolio-item">
-                  <a href="#">
-                    <img class="img-portfolio img-fluid" src="img/portfolio-1.jpg">
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="portfolio-item">
-                  <a href="#">
-                    <img class="img-portfolio img-fluid" src="img/portfolio-2.jpg">
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="portfolio-item">
-                  <a href="#">
-                    <img class="img-portfolio img-fluid" src="img/portfolio-3.jpg">
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="portfolio-item">
-                  <a href="#">
-                    <img class="img-portfolio img-fluid" src="img/portfolio-4.jpg">
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- /.row (nested) -->
-            <a href="#" class="btn btn-dark">View More Items</a>
-          </div>
-          <!-- /.col-lg-10 -->
-        </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container -->
+       <div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="img/portfolio-1.jpg" style="width:100%">
+  <div class="text">Vaca</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="img/portfolio-3.jpg" style="width:100%">
+  <div class="text">Ganancia</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="img/portfolio-4.jpg" style="width:100%">
+  <div class="text">Rancho</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
     </section>
 
     <!-- Call to Action -->
@@ -213,9 +201,41 @@
       <small>
         <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
       </small>
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+      
     </section>
-    
-        <!--Forms-->
+
+    <!--Forms-->
     <section id=" contact" class="mail">
             <div>
         <div class="contact">
